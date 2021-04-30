@@ -13,7 +13,7 @@ class Copyright extends React.Component {
   render() {
     return (
       <div className={styles.copyrightsection}>
-        <p>Created by {this.state.owner} &copy;{this.state.year} </p>
+        <p>Created by {this.state.owner} &copy;{this.state.year} (Next-JS)</p>
       </div>
     );
   }
