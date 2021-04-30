@@ -1,7 +1,11 @@
-export default function AboutPage() {
-    return (
-        <div>
-            <h1>About</h1>
-        </div>
-    )
+import Link from 'next/link';
+import Layout from '../components/Layout';
+
+export default function Home() {
+  return (
+    <Layout title="About Page">
+      <h1>About Page</h1>
+      <Link href="/">Home</Link>
+    </Layout>
+  )
 }
