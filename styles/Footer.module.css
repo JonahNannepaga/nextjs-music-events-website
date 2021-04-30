@@ -1,6 +1,12 @@
 /* ----------------------------- Footer Section ----------------------------- */
+.footerWrapper {
+   position:absolute;
+   bottom:0;
+   width:100%;
+}
+
 .footer {
-    margin: 100px 0 40px;
+    /* margin: 100px 0 40px; */
     text-align: center;
 }
 .footer p {

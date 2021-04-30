@@ -3,7 +3,7 @@ import styles from '../styles/Footer.module.css';
 import Copyright from './Copyright';
 export default function Footer() {
     return (
-        <footer>
+        <footer className={styles.footerWrapper}>
             <div className={styles.footer}>
                 <p>
                     <Link href='/about'>
