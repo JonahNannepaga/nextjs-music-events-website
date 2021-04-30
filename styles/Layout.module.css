@@ -1,0 +1,8 @@
+/* ---------------------------- Container Layout ---------------------------- */
+.container {
+  margin: 60px auto;
+  max-width: 100rem;
+  padding: 0 30px;
+}
+
+
