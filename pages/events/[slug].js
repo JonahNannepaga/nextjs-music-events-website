@@ -1,12 +1,30 @@
-import { FaPencilAlt, FaTimes } from 'react-icons/fa'
-import Link from 'next/link'
-import Image from 'next/image'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaPencilAlt, FaTimes } from 'react-icons/fa';
+import Link from 'next/link';
+import Image from 'next/image';
+import {Router, useRouter} from 'next/router';
 import Layout from '@/components/Layout';
 import {API_URL} from '@/config/index';
 import styles from '@/styles/Event.module.css';
 export default function EventPage({evt}) {
-    const deleteEvent = () => {
-        console.log('DELETE');
+
+    const router = useRouter();
+
+    const deleteEvent = async (e) => {
+        if(confirm('Are you sure?')) {
+            const res = await fetch(`${API_URL}/events/${evt.id}`,{
+                method: 'DELETE',
+            });
+
+            const data = await res.json();
+
+            if(!res.ok) {
+                toast.error(data.message);
+            } else {
+                router.push('/events');
+            }
+        }
     };
     return (
         <Layout>
@@ -25,6 +43,8 @@ export default function EventPage({evt}) {
                 </span>
 
                 <h1>{evt.name}</h1>
+
+                <ToastContainer />
 
                 {evt.image && (
                     <div className={styles.image}>
